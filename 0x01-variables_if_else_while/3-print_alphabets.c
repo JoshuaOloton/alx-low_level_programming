@@ -10,12 +10,17 @@
  */
 int main(void)
 {
-	int ch;
+	int ch1, ch2;
 
-	for (ch = 'a'; ch <= 'z'; ch++)
+	for (ch1 = 'a'; ch1 <= 'z'; ch1++)
 	{
-		putchar(ch);
+		putchar(ch1);
 	}
+	for (ch2 = 'A'; ch2 <= 'Z'; ch2++)
+	{
+		putchar(ch2);
+	}
+	putchar(10);
 
 	return (0);
 }
