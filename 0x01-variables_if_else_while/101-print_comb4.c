@@ -10,24 +10,24 @@
  */
 int main(void)
 {
-	int tens;
-  	int ones;
+	int i, j, k;
 
-  	for (tens = 0; tens <= 9; tens++)
-    	{
-      		for (ones = tens + 1; ones <= 9; ones++)
-		{	
-	  		putchar(tens + '0');
-	  		putchar(ones + '0');
-
-	  		if (tens < 8)
-	    		{
-	      			putchar(',');
-	      			putchar(' ');
-	    		}
+	for (i = 0; i < 10; i++)
+	{
+		for (j = i + 1; j < 10; j++)
+		{
+			for (k = j + 1; k < 10; k++)
+			{
+			putchar(i + '0');
+			putchar(j + '0');
+			putchar(k + '0');
+			putchar(' ');
+			}
 		}
-    	}
-  	putchar(10);
+	}
 
+
+	putchar(10);
+	
 	return (0);
 }
