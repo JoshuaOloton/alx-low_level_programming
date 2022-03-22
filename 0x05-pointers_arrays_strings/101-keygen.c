@@ -8,17 +8,17 @@
  */
 int main(void)
 {
-	srand(time(NULL));
-	int r, i;
+	int r = 0, c = 0;
+	time_t t;
 
-	for (i = 0; i < 20; i++)
+	srand((unsigned int) time(&t));
+	while (c < 2772)
 	{
-		r = rand() % 52;
-		if (r >= 0 && r <= 25)
-			r += 65;
-		else
-			r += 71;
+		r = rand() % 128;
+		if ((c + r) > 2772)
+			break;
+		c = c + r;
 		printf("%c", r);
 	}
-	return (0);
+	printf("%c\n", (2772 - c));
 }
