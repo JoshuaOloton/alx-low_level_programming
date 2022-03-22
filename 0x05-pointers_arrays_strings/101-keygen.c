@@ -8,9 +8,8 @@
  */
 int main(void)
 {
-	int r, i;
-
 	srand(time(NULL));
+	int r, i;
 
 	for (i = 0; i < 20; i++)
 	{
@@ -21,6 +20,5 @@ int main(void)
 			r += 71;
 		printf("%c", r);
 	}
-	printf("\n");
 	return (0);
 }
