@@ -10,15 +10,13 @@
  */
 char *leet(char *s)
 {
-	int i, j, len;
+	int i, j;
 	char *lower = "aeotl";
 	char *upper = "AEOTL";
 	char *num = "43071";
 
-	for (len = 0; s[len] != '\0'; len++)
-	{
-	}
-	for (i = 0; i < len; i++)
+	i = 0;
+	while (s[i] != '\0')
 	{
 		for (j = 0; j < 5; j++)
 		{
@@ -27,7 +25,7 @@ char *leet(char *s)
 				s[i] = num[j];
 			}
 		}
-
+		i++;
 	}
 	return (s);
 }
