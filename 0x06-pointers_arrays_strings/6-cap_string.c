@@ -4,23 +4,37 @@
 
 
 /**
- * string_toupper - change all lowercase to uppercase
- * @s: pointer
+ * cap_string - capitalizes all words of a string
+ * @s: input value
  *
- * Return: n
+ * Return: string
  */
-char *string_toupper(char *s)
+char *cap_string(char *s)
 {
-	int i, len;
+	int i;
 
-	for (len = 0; s[len] != '\0'; len++)
+	if (s[0] >= 97 && s[0] <= 122)
+		s[0] -= 32;
+	for (i = 0; s[i] != '\0' ; i++)
 	{
-	}
-	for (i = 0; i < len; i++)
-	{
-		if (s[i] >= 97 && s[i] <= 122)
+		switch (s[i])
 		{
-			s[i] -= 32;
+		case ',':
+		case ';':
+		case '.':
+		case '!':
+		case '?':
+		case '"':
+		case '(':
+		case ')':
+		case '{':
+		case '}':
+		case ' ':
+		case '\t':
+		case '\n':
+			if (s[i + 1] >= 97 && s[i + 1] <= 122)
+				s[i + 1] -= 32;
+			break;
 		}
 	}
 	return (s);
