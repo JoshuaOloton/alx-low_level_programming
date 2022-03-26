@@ -32,7 +32,6 @@ void print_number(int n)
 			n %= size;
 			size /= 10;
 		}
-		
 	}
 	_putchar(ones + '0');
 }
