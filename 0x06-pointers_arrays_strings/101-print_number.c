@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -7,9 +9,7 @@
  */
 void print_number(int n)
 {
-	int m, copy, size;
-
-	size = 1;
+	unsigned int m, d, count;
 
 	if (n < 0)
 	{
@@ -20,18 +20,19 @@ void print_number(int n)
 	{
 		m = n;
 	}
-	copy = m;
 
-	while (copy > 9)
+	d = m;
+	count = 1;
+
+	while (d > 9)
 	{
-		copy /= 10;
-		size *= 10;
+		d /= 10;
+		count *= 10;
 	}
 
-	while (size >= 1)
+	for (; count >= 1; count /= 10)
 	{
-		_putchar(((m / size) % 10) + 48);
-		size /= 10;
+		_putchar(((m / count) % 10) + 48);
 	}
 }
 
