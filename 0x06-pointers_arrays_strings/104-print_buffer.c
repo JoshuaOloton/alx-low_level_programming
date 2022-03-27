@@ -3,35 +3,43 @@
 #include "main.h"
 
 /**
-* print_number - prints # using _putchar function
-* @n: the integer to print
-*/
-void print_number(int n)
+ * print_buffer - prints a buffer
+ * @b: buffer.
+ * @size: size of buffer.
+ * Return: no return.
+ */
+void print_buffer(char *b, int size)
 {
-	int ones, size, copy;
+	int j, k, l;
 
-	size = 1;
-	if (n < 0)
+	if (size <= 0)
+		printf("\n");
+	else
 	{
-		_putchar('-');
-		n = -1 * n;
-	}
-	ones = n % 10;
-	copy = n / 10;
-	n /= 10;
-	while (copy >= 10)
-	{
-		copy /= 10;
-		size *= 10;
-	}
-	if (copy > 0)
-	{
-		while (size >= 1)
+		for (j = 0; j < size; j += 10)
 		{
-			_putchar((n / size) + '0');
-			n %= size;
-			size /= 10;
+			printf("%.8x:", j);
+			for (k = j; k < j + 10; k++)
+			{
+				if (k % 2 == 0)
+					printf(" ");
+				if (k < size)
+					printf("%.2x", *(b + k));
+				else
+					printf("  ");
+			}
+			printf(" ");
+			for (l = j; l < j + 10; l++)
+			{
+				if (l >= size)
+					break;
+				if (*(b + l) < 32 || *(b + l) > 126)
+					printf("%c", '.');
+				else
+					printf("%c", *(b + l));
+			}
+			printf("\n");
 		}
 	}
-	_putchar(ones + '0');
 }
+
