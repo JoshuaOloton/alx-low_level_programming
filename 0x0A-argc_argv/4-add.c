@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
-int to_integer(char *s);
+int num_check(char *s);
 /**
  * main - check the code
  * @argc: count of the arguments
@@ -22,40 +21,35 @@ int main(int argc, char *argv[])
 	a = 0;
 	for (i = 1; i < argc; i++)
 	{
-		if (to_integer(argv[i]) == -1)
+		if (num_check(argv[i]) == 0)
 		{
 			printf("Error\n");
 			return (1);
 		}
-		a += to_integer(argv[i]);
+		a += atoi(argv[i]);
 	}
 	printf("%d\n", a);
 	return (0);
 }
 
 /**
- * to_integer - convert to integer
+ * num_check - check for digits
  * @s: string
- * Return: int
+ * Return: 1 or 0
  */
-int to_integer(char *s)
+int num_check(char *s)
 {
-	int len, i, a, size;
+	int len, i;
 
 	for (len = 0; s[len] != 0; len++)
 	{
 	}
-	size = pow(10, len - 1);
-	a = 0;
 	for (i = 0; i < len; i++)
 	{
 		if (s[i] < 48 || s[i] > 57)
 		{
-			return (-1);
+			return (0);
 		}
-		a += ((s[i] - 48) * size);
-		size /= 10;
 	}
-	return (a);
+	return (1);
 }
-
