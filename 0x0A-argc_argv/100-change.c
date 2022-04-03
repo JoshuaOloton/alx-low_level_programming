@@ -9,9 +9,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int cent, coin;
+	int cent, coin = 0;
 
-	coin = 0;
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -43,12 +42,12 @@ int main(int argc, char *argv[])
 		cent -= 2;
 		coin++;
 	}
-	while (cent >= 1 && cent < 2)
+	if (cent == 1)
 	{
 		cent -= 1;
 		coin++;
 	}
 	printf("%d\n", coin);
-
 	return (0);
 }
+
