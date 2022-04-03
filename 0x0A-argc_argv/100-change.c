@@ -19,7 +19,10 @@ int main(int argc, char *argv[])
 	}
 	cent = atoi(argv[1]);
 	if (cent < 0)
+	{
 		printf("%d\n", 0);
+		return (0);
+	}
 	while (cent >= 25)
 	{
 		cent -= 25;
