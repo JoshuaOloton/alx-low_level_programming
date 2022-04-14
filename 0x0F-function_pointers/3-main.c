@@ -24,11 +24,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (strcmp(s, "+") &&
-	strcmp(s, "-") &&
-	strcmp(s, "*") &&
-	strcmp(s, "/") &&
-	strcmp(s, "%"))
+	if (get_op_func(s) == NULL || s[1])
 	{
 		printf("Error\n");
 		exit(99);
