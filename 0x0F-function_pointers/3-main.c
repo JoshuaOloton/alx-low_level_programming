@@ -4,7 +4,7 @@
 #include "3-calc.h"
 
 /**
- * main - check the code for ALX School students.
+ * main - prints result of operation
  * @argc: argument count.
  * @argv: argument vector.
  *
@@ -14,28 +14,26 @@ int main(int argc, char *argv[])
 {
 	char *s;
 	int a, b;
-	int (*func)(int, int);
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-	s = argv[2];
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (get_op_func(s) == NULL || s[1])
+	if (get_op_func(argv[2]) == NULL || argv[2][1])
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if ((!strcmp(s, "/") || !strcmp(s, "%")) && b == 0)
+	if ((!strcmp(argv[2], "/") || !strcmp(argv[2], "%")) && atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	s = argv[2];
 
-	func = get_op_func(s);
-	printf("%d\n", func(a, b));
+	printf("%d\n", get_op_func(s)(a, b));
 	return (0);
 }
