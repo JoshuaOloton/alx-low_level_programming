@@ -1,4 +1,5 @@
 #include "variadic_functions.h"
+#include "3-functions.h"
 
 /**
  * main - check the code
