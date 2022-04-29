@@ -9,13 +9,13 @@
  */
 unsigned long int _pow(int base, int power)
 {
-	int i;
+        int i;
 	unsigned long int result;
 
-	result = 1;
-	for (i = 0; i < power; i++)
-		result *= base;
-	return (result);
+	result = 1;	
+        for (i = 0; i < power; i++)
+                result *= base;
+        return (result);
 }
 
 /**
@@ -30,7 +30,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	if (index >= 32)
 		return (-1);
-	a = _pow(2, 32) - 1 - (1 << index);
+	a = _pow(2, 32) -1 - (1 << index);
 	*n = *n & a;
 	return (1);
 }
