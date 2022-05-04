@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		error(98, argv[1]);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_APPEND, 0664);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_to == -1)
 		error(99, argv[2]);
 	nread = 1024;
