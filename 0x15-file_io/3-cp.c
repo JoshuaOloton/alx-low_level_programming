@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include "main.h"
 
 void error(int e, char *argv[]);
 
