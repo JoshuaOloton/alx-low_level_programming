@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-oid printBefore(void) __attribute__((constructor));
+void printBefore(void) __attribute__((constructor));
 
 /**
  * printBefore - prints from init by the loader before main
