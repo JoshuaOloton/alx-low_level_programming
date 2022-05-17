@@ -70,7 +70,7 @@ void error(int e, char *argv[])
 {
 	if (e == 98)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (e == 99)
